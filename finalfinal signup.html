@@ -1,140 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
- 
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
- 
-  <!-- jQuery CDN Link -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <title>Sign Up</title>
-  <script type="text/javascript">
-    $('.loginBtn').click(function(){
-  $('.login').show();
-  $('.signUp').hide();
-  /* border bottom on button click */
-  $('.loginBtn').css({'border-bottom' : '2px solid #ff4141'});
-  /* remove border after click */
-  $('.signUpBtn').css({'border-style' : 'none'});
-});
- 
- 
-/* Show sign Up form on button click */
- 
-$('.signUpBtn').click(function(){
-  $('.login').hide();
-  $('.signUp').show();
-  /* border bottom on button click */
-  $('.signUpBtn').css({'border-bottom' : '2px solid #ff4141'});
-   /* remove border after click */
-   $('.loginBtn').css({'border-style' : 'none'});
-});
-  </script>
-  <style type="text/css">
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url();
-  background-size: cover;
-  background-attachment: fixed;
-}
-/* align items center vertically and horizontally  */
-.container{
-  display: flex;
-  justify-content: center;
-  align-items:center !important;
-  height: 100vh;
-}
-.form{
-  width: 350px;
-  height: 450px;
-  background-color: rgba(41, 39, 39, 0.3);
-  box-shadow: 0 5px 30px black;
-}
-.btn button {
-  padding: 3px;
-  margin: 30px 0px 40px 30px;
-  border-style: none;
-  background-color: transparent;
-  color: beige;
-  font-size: 18px;
-  font-weight: 550;
-}
-.formGroup{
-  display: flex;
-  justify-content: center;
-}
-.formGroup input{
-  border: none;
-  width: 80%;
-  border-bottom: 2px solid white;
-  padding: 10px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: transparent;
-  color: white;
-}
-input:focus {
-  outline: none !important;
-  border-bottom: 2px solid rgb(91, 243, 131);
-  font-size: 17px;
-  font-weight: bold;
-  color: white;
-}
-::placeholder {
-  color: white;
-}
-.checkBox{
-  display: flex;
-  justify-content: center;
-  margin: 16px!important;
-}
- 
-#checkbox{
-  margin-right: 10px;
-  height: 15px;
-  width: 15px;
-}
-.text{
-  color: rgb(199, 197, 197);
-  font-size: 13px;
-}
-.btn2{
-  padding: 10px;
-  width: 150px;
-  border-radius: 20px;
-  background-color: rgb(10, 136, 43);
-  border-style: none;
-  color: white;
-  font-weight: 600;
-}
-.btn2:hover{
-  background-color: rgba(10, 136, 43, 0.5);
-}
-.btn button:hover{
-  border-bottom: 2px solid rgb(91, 243, 131);
-}
- 
-/* hide signup form */
-.login{
-  display: none;
-}
- 
-/* Login form code */
-.login{
-  margin-top: 40px;
-}
-.login .checkBox{
-  margin-top: 30px !important;
-}    
-        *{
+    <title></title>
+    <style type="text/css">
+         *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -149,7 +18,6 @@ input:focus {
     background: #000080;
     z-index: 9;
 }
-
 .nav{
     padding: 10px 10vw;
     display: flex;
@@ -253,16 +121,141 @@ input:focus {
 .link:hover{
     opacity: 5;
 }
-.hero-section{
+.product-details{
     width: 100%;
-    height: 100vh;
-    background-image: url('https://images.pexels.com/photos/3839432/pexels-photo-3839432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: cover;
+    padding: 60px 10vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
-.jai{
+
+.image-slider{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-image: url('https://images-do.nyc3.cdn.digitaloceanspaces.com/lAVtCJXFVr/product_images/1654860993.WhatsApp_Image_2022-06-10_at_4.56.06_PM.jpeg');
+    background-size: cover;
+}
+
+.product-images{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #fff;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.product-images img{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.product-images img.active{
+    opacity: 0.5;
+}
+.details{
+    width: 50%;
+}
+
+.details .product-brand{
+    text-transform: capitalize;
+    font-size: 30px;
+}
+
+.details .product-short-des{
+    font-size: 25px;
+    line-height: 30px;
+    height: auto;
+    margin: 15px 0 30px;
+}
+
+.product-price{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.product-actual-price{
+    font-size: 30px;
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin: 0 20px;
+    font-weight: 300;
+}
+
+.product-discount{
+    color: #ff7d7d;
+    font-size: 20px;
+}
+
+.product-sub-heading{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 60px 0 10px;
+    font-weight: 300;
+}
+
+.size-radio-btn{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #383838;
+    border-radius: 50%;
+    margin: 10px;
+    margin-left: 0;
+    line-height: 80px;
+    text-transform: uppercase;
+    color: #383838;
+    cursor: pointer;
+}
+
+.size-radio-btn.check{
+    background: #383838;
+    color: #fff;
+}
+
+.btn{
+    width: 48%;
+    padding: 20px;
+    border-radius: 5px;
+    background: none;
+    border: 1px solid #383838;
+    color: #383838;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 30px 0;
+    text-transform: capitalize;
+}
+
+.cart-btn{
+    margin-right: 2%;
+    background: #383838;
+    color: #fff;
+}
+.detail-des{
+    padding: 0 10vw;
+    text-transform: capitalize;
+}
+
+.heading{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.des{
+    color: #383838;
+    line-height: 25px;
+}
+  .jai{
     display: flex;
     justify-content: center;
     list-style: none;
@@ -284,7 +277,7 @@ input:focus {
     justify-content: center;
    transition: 0.5s;
     cursor: pointer;
-  
+  margin: - 700px;
    position: left ;
   left:150;
  color: white;
@@ -292,24 +285,435 @@ input:focus {
  .jaii:hover{
     color: #000080;
   opacity: 1;
-  </style>
-</head>
+}
+.picZoomer{
+    position: relative;
+    /*margin-left: 40px;
+    padding: 15px;*/
+}
+.picZoomer-pic-wp{
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+.picZoomer-pic-wp:hover .picZoomer-cursor{
+    display: block;
+}
+.picZoomer-zoom-pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.picZoomer-pic{
+    /*width: 100%;
+    height: 100%;*/
+}
+.picZoomer-zoom-wp{
+    display: none;
+    position: absolute;
+    z-index: 999;
+    overflow: hidden;
+    border:1px solid #eee;
+    height: 460px;
+    margin-top: -19px;
+}
+.picZoomer-cursor{
+    display: none;
+    cursor: crosshair;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    background-color: rgba(0,0,0,.1);
+}
+.picZoomCursor-ico{
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: url(images/zoom-ico.png) left top no-repeat;
+}
+
+.my_img {
+    vertical-align: middle;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100%;
+}
+.piclist li{
+    display: inline-block;
+    width: 90px;
+    height: 114px;
+    border: 1px solid #eee;
+}
+.piclist li img{
+    width: 97%;
+    height: auto;
+}
+
+/* custom style */
+.picZoomer-pic-wp,
+.picZoomer-zoom-wp{
+    border: 1px solid #eee;
+}
+
+
+
+.section-bg {
+    background-color: #fff1e0;
+}
+section {
+    padding: 60px 0;
+}
+.row-sm .col-md-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*===pic-Zoom===*/
+._boxzoom .zoom-thumb {
+    width: 90px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0px;
+}
+._boxzoom .zoom-thumb ul.piclist {
+    padding-left: 0px;
+    top: 0px;
+}
+._boxzoom ._product-images {
+    width: 80%;
+    display: inline-block;
+}
+._boxzoom ._product-images .picZoomer {
+    width: 100%;
+}
+._boxzoom ._product-images .picZoomer .picZoomer-pic-wp img {
+    left: 0px;
+}
+._boxzoom ._product-images .picZoomer img.my_img {
+    width: 100%;
+}
+.piclist li img {
+    height:100px;
+    object-fit:cover;
+}
+
+/*======products-details=====*/
+._product-detail-content {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid lightgray;
+}
+._product-detail-content p._p-name {
+    color: black;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 12px;
+}
+.p-list span {
+    margin-right: 15px;
+}
+.p-list span.price {
+    font-size: 25px;
+    color: #318234;
+}
+._p-qty > span {
+    color: black;
+    margin-right: 15px;
+    font-weight: 500;
+}
+._p-qty .value-button {
+    display: inline-flex;
+    border: 0px solid #ddd;
+    margin: 0px;
+    width: 30px;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    background: #fd7f34;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+}
+
+._p-qty .value-button {
+    border: 0px solid #fe0000;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+._p-qty input#number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #fe0000;
+    border-bottom: 1px solid #fe0000;
+    margin: 0px;
+    width: 50px;
+    height: 35px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+._p-add-cart {
+    margin-left: 0px;
+    margin-bottom: 15px;
+}
+.p-list {
+    margin-bottom: 10px;
+}
+._p-features > span {
+    display: block;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+._p-add-cart .buy-btn {
+    background-color: #fd7f34;
+    color: #fff;
+}
+._p-add-cart .btn {
+    text-transform: capitalize;
+    padding: 6px 20px;
+    /* width: 200px; */
+    border-radius: 52px;
+}
+._p-add-cart .btn {
+    margin: 0px 8px;
+}
+
+/*=========Recent-post==========*/
+.title_bx h3.title {
+    font-size: 22px;
+    text-transform: capitalize;
+    position: relative;
+    color: #fd7f34;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+.title_bx h3.title:before {
+    content: "";
+    height: 2px;
+    width: 20%;
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+    top: 40px;
+    background-color: #fd7f34;
+}
+.title_bx h3.title:after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    background-color: #ffc107;
+}
+.common_wd .owl-nav .owl-prev, .common_wd .owl-nav .owl-next {
+    background-color: #fd7f34 !important;
+    display: block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 0px !important;
+}
+.owl-nav .owl-next {
+    right:-10px;
+}
+.owl-nav .owl-prev, .owl-nav .owl-next {
+    top:50%;
+    position: absolute;
+}
+.common_wd .owl-nav .owl-prev i, .common_wd .owl-nav .owl-next i {
+    color: #fff;
+    font-size: 14px !important;
+    position: relative;
+    top: -1px;
+}
+.common_wd .owl-nav {
+    position: absolute;
+    top: -21%;
+    right: 4px;
+    width: 65px;
+}
+.owl-nav .owl-prev i, .owl-nav .owl-next i {
+    left: 0px;
+}
+._p-qty .decrease_ {
+    position: relative;
+    right: -5px;
+    top: 3px;
+}
+
+._p-qty .increase_ {
+    position: relative;
+    top: 3px;
+    left: -5px;
+}
+/*========box========*/
+.sq_box {
+    padding-bottom: 5px;
+    border-bottom: solid 2px #fd7f34;
+    background-color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.item .sq_box span.wishlist {
+    right: 5px !important;
+}
+.sq_box span.wishlist {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.sq_box span {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px 10px;
+}
+.sq_box span.wishlist i {
+    color: #adb5bd;
+    font-size: 20px;
+}
+.sq_box h4 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    color: #343a40;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+}
+.sq_box .price-box {
+    margin-bottom: 15px !important;
+}
+.sq_box .btn {
+    border-radius: 50px;
+    padding: 5px 13px;
+    font-size: 15px;
+    color: #fff;
+    background-color: #fd7f34;
+    font-weight: 600;
+}
+.sq_box .price-box span.price {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+.sq_box span {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px 10px;
+}
+.sq_box .price-box span.offer-price {
+    color:#28a745;
+}
+.sq_box img {
+    object-fit: cover;
+    height: 150px !important;
+    margin-top: 20px;
+}
+.sq_box span.wishlist i:hover {
+    color: #fd7f34;
+}
+body {
+  font-family: Helvetica, sans-serif;
+  padding: 5%;
+  text-align: center;
+  font-size: 50;
+}
  
+/* Styling the area of the slides */
+#slideshow {
+  overflow: hidden;
+  height: 510px;
+  width: 728px;
+  margin: 0 auto;
+}
+ 
+/* Style each of the sides
+with a fixed width and height */
+.slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+}
+ 
+/* Add animation to the slides */
+.slide-wrapper {
+   
+/* Calculate the total width on the
+  basis of number of slides */
+  width: calc(728px * 4);
+ 
+/* Specify the animation with the
+  duration and speed */
+  animation: slide 10s ease infinite;
+}
+ 
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+  background-image: url(https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-10.webp);
+  i: cover;
+}
+ 
+.slide:nth-child(2) {
+  background-image: url(https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-10.webp);
+}
+ 
+.slide:nth-child(3) {
+  background-image: url(https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-13.webp);
+} 
+/* Define the animation
+for the slideshow */
+@keyframes slide {
+   
+/* Calculate the margin-left for
+  each of the slides */
+  20% {
+    margin-left: 0px;
+  }
+ 
+  40% {
+    margin-left: calc(-728px * 1);
+  }
+ 
+  60% {
+    margin-left: calc(-728px * 2);
+  }
+ 
+  80% {
+    margin-left: calc(-728px * 3);
+  }
+
+    </style>
+</head>
 <body>
-  <nav class="navbar">
+<nav class="navbar">
 <div class="nav">
     <img src="img/dark-logo.png" class="brand-logo" alt="">
     <div class="nav-items">
         <div class="search">
             <input type="text" class="search-box" placeholder="search brand, product">
             <button class="search-btn">search</button>
-              
+            <i class='far fa-user-circle' style='font-size:48px;color:red'></i>
         </div>
-        <a class="jai" href="#"><h1>Sign Up</h1> </a>
-        <a class="jaii" href="#"><img src="https://o.remove.bg/downloads/aa786490-109e-4510-802c-d70f8be5fc7c/hd-white-like-heart-icon-silhouette-transparent-png-31634946028wuw06nqqdm-removebg-preview.png"></i></a>
+        <a href="#">
+        <a class="jai" href="#"><h1>Login</h1> </a></a>
+          <a class="jaii" href="#"><img src="https://o.remove.bg/downloads/aa786490-109e-4510-802c-d70f8be5fc7c/hd-white-like-heart-icon-silhouette-transparent-png-31634946028wuw06nqqdm-removebg-preview.png"></i></a>
     </div>
-     
-        
+    </div>
 </div>
 </nav>
 <ul class="links-container">
@@ -319,61 +723,118 @@ input:focus {
     <li class="link-item"><a href="#" class="link">kids</a></li>
     <li class="link-item"><a href="#" class="link">accessories</a></li>
 </ul>
-  <header class="hero-section">
-  <div class="container">
-    <div class="form">
-      <div class="btn">
-        <button class="signUpBtn">SIGN UP</button>
-        <button class="loginBtn">LOG IN</button>
-      </div>
-      <form class="signUp" action="" method="get">
-        <div class="formGroup">
-          <input type="text" id="userName" placeholder="User Name" autocomplete="off">
+<div id="slideshow">
+        <div class="slide-wrapper">
+             
+        <!-- Define each of the slides
+         and write the content -->
+          
+            <div class="slide">
+                <h1 class="slide-number">
+                    <img src="https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-13.webp">
+                </h1>
+            </div>
+            <div class="slide">
+                <h1 class="slide-number">
+                    <img src="https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-10.webp">
+                </h1>
+            </div>
+            <div class="slide">
+                <h1 class="slide-number">
+                    <img src="https://static01.manyavar.com/uploads/dealimages/13322/mediumimages/alluring-blue-party-wear-indo-western-set-cpiw544-339-10.webp">
+                </h1>
+            </div>
+            
+            
         </div>
-        <div class="formGroup">
-          <input type="email" placeholder="Email ID" name="email" required autocomplete="off">
-        </div>
-        <div class="formGroup">
-          <input type="password" id="password" placeholder="Password" required autocomplete="off">
-        </div>
-        <div class="formGroup">
-          <input type="password" id="confirmPassword" placeholder="Confirm Password" required autocomplete="off">
-        </div>
-        <div class="checkBox">
-          <input type="checkbox" name="checkbox" id="checkbox">
-          <span class="text">I agree with term & conditions</span>
-        </div>
-        <div class="formGroup">
-          <button type="button" class="btn2">REGISTER</button>
-        </div>
- 
-      </form>
-        
-      <!------ Login Form -------- -->
-      <form class="login" action="" method="get">
-        
-        <div class="formGroup">
-          <input type="email" placeholder="Email ID" name="email" required autocomplete="off">
-        </div>
-        <div class="formGroup">
-          <input type="password" id="password" placeholder="Password" required autocomplete="off">
-         
-        </div>
-        <div class="checkBox">
-          <input type="checkbox" name="checkbox" id="checkbox">
-          <span class="text">Keep me signed in on this device</span>
-        </div>
-        <div class="formGroup">
-          <button type="button" class="btn2">REGISTER</button>
-        </div>
- 
-      </form>
- 
     </div>
-  </div>
- 
-  <script src="jQuery.js"></script>
 
+
+<section id="services" class="services section-bg">
+   <div class="container-fluid">
+     <div class="col-sm-12 text-center mb-4">
+       
+     </div>
+      <div class="row row-sm">
+         <div class="col-md-6 _boxzoom">
+            <div class="zoom-thumb">
+               <ul class="piclist">
+                  <li><img src="https://s.fotorama.io/1.jpg" alt=""></li>
+                  <li><img src="https://s.fotorama.io/2.jpg" alt=""></li>
+                  <li><img src="https://s.fotorama.io/3.jpg" alt=""></li>
+                  <li><img src="https://ucarecdn.com/382a5139-6712-4418-b25e-cc8ba69ab07f/-/stretch/off/-/resize/760x/" alt=""></li>
+               </ul>
+            </div>
+            <div class="_product-images">
+               <div class="picZoomer">
+                  <img class="my_img" src="https://s.fotorama.io/1.jpg" alt="">
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="_product-detail-content">
+               <p class="_p-name"> Milton Bottle </p>
+               <div class="_p-price-box">
+                  <div class="p-list">
+                     <span> M.R.P. : <i class="fa fa-inr"></i> <del> 1399  </del>   </span>
+                     <span class="price"> Rs. 699 </span>
+                  </div>
+                  <div class="_p-add-cart">
+                     <div class="_p-qty">
+                        <span>Add Quantity</span>
+                        <div class="value-button decrease_" id="" value="Decrease Value">-</div>
+                        <input type="number" name="qty" id="number" value="1" />
+                        <div class="value-button increase_" id="" value="Increase Value">+</div>
+                     </div>
+                  </div>
+                  <div class="_p-features">
+                     <span> Description About this product:- </span>
+                     Solid color polyester/linen full blackout thick sunscreen floor curtain
+                     Type: General Pleat
+                     Applicable Window Type: Flat Window
+                     Format: Rope
+                     Opening and Closing Method: Left and Right Biparting Open
+                     Processing Accessories Cost: Included
+                     Installation Type: Built-in
+                     Function: High Shading(70%-90%)
+                     Material: Polyester / Cotton
+                     Style: Classic
+                     Pattern: Embroidered
+                     Location: Window
+                     Technics: Woven
+                     Use: Home, Hotel, Hospital, Cafe, Office
+                     Feature: Blackout, Insulated, Flame Retardant
+                     Place of Origin: India
+                     Name: Curtain
+                     Usage: Window Decoration
+                     Keywords: Ready Made Blackout Curtain                        
+                  </div>
+                  <form action="" method="post" accept-charset="utf-8">
+                     <ul class="spe_ul"></ul>
+                     <div class="_p-qty-and-cart">
+                        <div class="_p-add-cart">
+                           <button class="btn-theme btn buy-btn" tabindex="0">
+                           <i class="fa fa-shopping-cart"></i> Buy Now
+                           </button>
+                           <button class="btn-theme btn btn-success" tabindex="0">
+                           <i class="fa fa-shopping-cart"></i> Add to Cart
+                           </button>
+                           <input type="hidden" name="pid" value="18" />
+                           <input type="hidden" name="price" value="850" />
+                           <input type="hidden" name="url" value="" />    
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="sec bg-light">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12 title_bx">
+           
 </body>
- 
 </html>
